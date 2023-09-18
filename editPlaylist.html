@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Playlist</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles_editPlaylist.css">
+</head>
+<body>
+    <h1>Edit Playlist</h1>
+    
+    <!-- Display the playlist name -->
+    <h2>Playlist Name: <span id="playlistName"></span></h2>
+
+    <!-- Display the list of songs -->
+    <h2>Songs:</h2>
+
+    <div id="playlistSongsContainer">
+        <div id="playlistSongs">
+            <ul id="songList" class="scrollable-list"></ul>
+        </div>
+    </div>
+
+    <!-- Button container for Add Song and Close Playlist buttons -->
+    <div class="button-container">
+        <!-- Button to add a song -->
+        <button id="addSongButton">Add Song</button>
+
+        <!-- Button to close the playlist -->
+        <a id="closePlaylistButton" href="https://tastelist.me">Close Playlist</a>
+    </div>
+
+    <!-- The pop-up modal for searching and adding songs -->
+    <div id="addSongModal" class="modal-container hidden">
+        <!-- Search bar -->
+        <input type="text" id="songSearchBar" class="centered" placeholder="Search for songs">
+
+        <!-- Search button -->
+        <button id="searchButton" class="search-button">Search</button>
+
+        <!-- Scrollable list of search results -->
+        <div id="searchResultsContainer">
+            <ul id="searchResults" class="scrollable-list"></ul>
+        </div>
+
+        <!-- Close button -->
+        <button id="closeAddSongModal">Close</button>
+    </div>
+
+    <!-- Add any additional content and scripts as needed -->
+    <script src="editPlaylist.js"></script>
+</body>
+</html>

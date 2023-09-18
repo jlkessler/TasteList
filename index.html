@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TasteList</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!-- Login to Spotify button -->
+    <a href="https://accounts.spotify.com/authorize?client_id=287b11671d54482ca36b0f7f46923733&response_type=token&redirect_uri=https://authorize.tastelist.me&state=&scope=playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20playlist-modify-private%20user-read-email&show_dialog=true" class="login-button" id="loginButton">Login with Spotify</a>
+
+    <div id="informationContainer" class="hidden">
+        <!-- This will display the profile information if available -->
+        <h1>Your Spotify Profile</h1>
+        <div id="profileInfo">
+            <p><strong>ID:</strong> <span id="profileId"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Display Name:</strong> <span id="profileDisplayName"></span></p>
+            <p><strong>Profile Image:</strong> <img src="" id="profileImage" alt="No profile image"></p>
+            <!-- Displays user's streaming service playlists -->
+            <div id="playlistsSection">
+                <h2>Your Playlists</h2>
+                <div id="playlistContainer">
+                    <ul id="playlistList"></ul>
+                </div>
+            </div>
+        </div>
+        <!-- Displays user's TasteList playlists -->
+        <div id="tastelistPlaylistsSection">
+            <h2>Your TasteList Playlists</h2>
+            <ul id="tastelistPlaylistList" class="scrollable-list"></ul>
+        </div>
+
+        <!-- Create new playlist button -->
+        <div id="createPlaylistContainer">
+            <button id="createPlaylistButton">Create New Playlist</button>
+        </div>
+
+        <!-- The pop-up modal for creating a new playlist -->
+        <div id="createPlaylistModal" class="modal-container">
+            <div class="modal-square create-playlist-modal">
+                <h2>Create New Playlist</h2>
+                <label for="playlistName">Playlist Name:</label>
+                <input type="text" id="playlistName" placeholder="Enter playlist name">
+                <button id="createPlaylistConfirm" class="modal-button modal-button-yes">Create</button>
+                <button id="createPlaylistCancel" class="modal-button modal-button-no">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Log Out button -->
+        <button id="logoutButton" onclick="logout()">Log Out</button>
+    </div>
+    <!-- This is where the magic happens -->
+    <script src="app.js"></script>
+</body>
+</html>
