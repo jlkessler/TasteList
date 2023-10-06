@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TasteList</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles-v0.0.1.css">
+</head>
+<body>
+    <!-- Login to Spotify button -->
+    <a href="https://accounts.spotify.com/authorize?client_id=287b11671d54482ca36b0f7f46923733&response_type=token&redirect_uri=https://authorize.tastelist.me&state=&scope=playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20playlist-modify-private%20user-read-email%20user-library-modify&show_dialog=true" class="login-button" id="loginButton">Login with Spotify</a>
+
+    <div id="informationContainer" class="hidden">
+        <!-- This will display the profile information if available -->
+        <h1>Your Spotify Profile</h1>
+        <div id="profileInfo">
+            <p><strong>ID:</strong> <span id="profileId"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Display Name:</strong> <span id="profileDisplayName"></span></p>
+            <p><strong>Profile Image:</strong> <img src="" id="profileImage" alt="No profile image"></p>
+
+            <!-- Displays user's streaming service playlists -->
+            <div id="playlistsSection">
+                <h2>Your Playlists</h2>
+                <div id="playlistContainer">
+                    <ul id="playlistList"></ul>
+                </div>
+            </div>
+
+              <!-- Displays user's TasteList playlists -->
+            <div id="tastelistPlaylistsSection">
+                <h2>Your TasteList Playlists</h2>
+                <div id="tastelistPlaylistContainer">
+                    <ul id="tastelistPlaylistList" class = 'scrollable-list'></ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Create new playlist button -->
+        <div id="createPlaylistContainer">
+            <button id="createPlaylistButton">Create New Playlist</button>
+        </div>
+
+        <!-- Log Out button -->
+        <button id="logoutButton" onclick="logout()">Log Out</button>
+    </div>
+
+     <!-- This is where the magic happens -->
+    <script src="generalFunctions.js"></script>
+    <script src="Spotify.js"></script>
+    <script src="appFunctions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Authorization</title>
+</head>
+<body>
+    <script>
+        // Parse the URL to extract the access token
+        const urlParams = new URLSearchParams(window.location.hash.substr(1));
+        const accessToken = urlParams.get("access_token");
+
+        if (accessToken) {
+            // Redirect to main website with the access token as a query parameter
+            window.location.href = `https://www.tastelist.me/?access_token=${accessToken}&streaming_service=S`;  // CHANGE THIS, DEFAULT SPOTIFY FOR NOW!
+        } else {
+            // Access token is null, redirect to main website without it
+            window.location.href = 'https://www.tastelist.me/';
+        }
+    </script>
+</body>
+</html>

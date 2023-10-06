@@ -1,0 +1,407 @@
+/* Set a blue background for the entire page */
+body {
+    background-color: #3498db;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the page header */
+h1 {
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Style the playlist name */
+h2 {
+    color: #fff;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+/* Style the playlist container */
+#playlistContainer {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Hide overflowing content */
+}
+
+/* Style the table container with fixed height and scrollable behavior */
+#tableContainer {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds container height */
+    position: relative; /* Create a positioning context for the header */
+}
+
+/* Style the playlist table */
+#playlistTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Set a fixed layout for the table */
+}
+
+/* Style the table header */
+#playlistTable th {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflow */
+}
+
+/* Style alternating table rows */
+#playlistTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style table data cells */
+#playlistTable td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Hover effect for table rows */
+#playlistTable tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Style for the fixed table header */
+#playlistTable thead {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    z-index: 1;
+}
+
+#playlistTable thead th {
+    cursor: pointer;
+}
+
+#playlistTable thead th:hover {
+    background-color: #666;
+}
+
+/* Style the button container for Add Song and Close Playlist buttons */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style the Add Song button */
+#addSongButton {
+    background-color: #2980b9; /* Darker blue */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block; /* Make the button a block element to occupy full width */
+    margin: 0 auto; /* Center the button horizontally */
+    margin-left: 20px; /* Offset the button slightly from the left */
+}
+
+/* Style the "Close Playlist" button */
+#closePlaylistButton {
+    background-color: #c0392b;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px; /* Add rounded corners if desired */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    text-decoration: none; /* Remove underline for links */
+    display: inline-block; /* Ensure button width adjusts to content */
+    margin-top: 40px;
+}
+
+/* Styles for the initially hidden modal container */
+.modal-add-song-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Adjust the width as needed */
+    background-color: #0074e4; /* Dark blue background color */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for depth */
+    color: #fff;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Style the centered search bar */
+.centered {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center; /* Center the text within the input field */
+}
+
+/* Style the search button with a different color */
+.search-button {
+    background-color: #c0392b; /* Red search button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px; /* Add some spacing to avoid overlap with close button */
+}
+
+/* Style the list items within the search results */
+#searchResults li {
+    background-color: #f3f3f3; /* Background color for each list item */
+    border: 1px solid #ccc; /* Border for each list item */
+    border-radius: 5px; /* Rounded corners for each list item */
+    margin: 10px auto; /* Center-align list items with horizontal margin */
+    padding: 10px; /* Padding inside each list item */
+    list-style-type: none; /* Remove list item bullets */
+    text-align: center; /* Center-align text within list items */
+    font-family: Arial, sans-serif; /* Font family for text */
+    color: #333; /* Darker text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+
+/* Style the scrollable list of search results container */
+#searchResultsContainer {
+    max-height: 150px; /* Set a maximum height for the scrollable container */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds the container */
+    background-color: #f0f0f0; /* Background color for the scrollable container */
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center; /* Center-align the content within the container */
+}
+
+/* Style the close button with a darker blue color */
+#closeAddSongModal {
+    background-color: #0057b3; /* Darker blue close button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Center align text within the modal */
+.modal-add-song-container * {
+    text-align: center;
+}
+
+/* Add these styles to your CSS file */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    z-index: 9999; /* Ensure the modal is on top of everything */
+}
+
+.modal-square {
+    background-color: #2ecc71; /* Green background color for the square modal */
+    width: 300px; /* Adjust the width as needed */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Box shadow for a raised effect */
+    color: #fff; /* White text color */
+}
+
+.modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modal-button-yes {
+    background-color: #4CAF50; /* Green color for the "Yes" button */
+    color: #fff; /* White text color */
+}
+
+.modal-button-no {
+    background-color: #e74c3c; /* Red color for the "No" button */
+    color: #fff; /* White text color */
+}
+
+/* Style the trash can icon container */
+.delete-icon-container {
+    display: inline-block; /* Make it inline-block to align next to the row content */
+    vertical-align: middle; /* Vertically align the icon container in the middle */
+    margin-left: 10px; /* Adjust the spacing between the row content and the icon */
+}
+
+/* Style the trash can icon */
+.delete-icon {
+    width: 32px; /* Adjust the width as needed */
+    height: 32px; /* Adjust the height as needed */
+    cursor: pointer; /* Show a pointer cursor on hover for interaction */
+    vertical-align: middle; /* Vertically align the icon in the middle of its container */
+}
+
+/* Style the delete column header to make it smaller */
+#playlistTable th:last-child {
+    width: 30px; /* Adjust the width as needed */
+}
+
+/* Style the smaller and rounder box */
+#modal-container-loading .modal-square {
+    background-color: #1e9952;
+    width: 700px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    padding: 20px;
+    border-radius: 15px; /* Increase border-radius for a rounder appearance */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Box shadow for a raised effect */
+    color: #fff; /* White text color */
+    font-size: 72px; /* Adjust the font size as needed */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center the text horizontally */
+    line-height: 1.5; /* Adjust line height for spacing */
+}
+
+#modal-container-loading .modal-square p {
+    word-wrap: break-word; /* Wrap text to fit the box size */
+}
+
+#playlistInfo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white; /* Set text color to white */
+}
+
+#playlistInfo h2 {
+    font-size: 14px;
+    margin-top: 0;
+}
+
+#playlistInfo p {
+    margin: 5px 0;
+    padding-left: 15px; /* Add left padding */
+}
+
+#playlistPrivacy {
+    margin-bottom: 10px;
+}
+
+#playlistPrivacy h2 {
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.action-button-container {
+    position: absolute;
+    top: 117px;
+    right: 50px;
+    display: flex;
+    flex-direction: row-reverse; /* Reverse button order */
+}
+
+.dark-blue-button {
+    background-color: #007BFF; /* Dark blue color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px; /* Add space between buttons */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.light-blue-button {
+    background-color: rgb(103, 172, 233); /* Light blue color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-blue-button:hover,
+.light-blue-button:hover {
+    opacity: 0.8; /* Add a slight hover effect */
+}
+
+/* Style for the input container */
+.input-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container > * {
+    margin-bottom: 10px; /* Adjust the value to increase or decrease the spacing */
+}
+
+/* Style for labels */
+.label {
+    font-weight: bold;
+    margin-bottom: 20px; /* Increase the vertical space between labels and inputs */
+}
+
+/* Style for text input fields */
+.input-text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px; /* Increase the vertical space between input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for textarea */
+.textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px; /* Increase the vertical space between textarea and checkbox */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the checkbox and its label */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* Increase the vertical space between checkbox and buttons */
+}
+
+.checkbox-label {
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+.searchBarContainer {
+    text-align: center;
+    margin-bottom: 20px; /* creates some space between the search bar and the table */
+}
+
+#searchBar {
+    width: 20%; /* takes up most of the width, adjust as needed */
+    padding: 10px; /* some padding for visual appeal */
+    border-radius: 5px; /* rounded corners */
+    border: 1px solid #ccc; /* a light border */
+    font-size: 16px; /* adjust font size if needed */
+    margin-left: 127px;
+}

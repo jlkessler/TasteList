@@ -1,0 +1,315 @@
+/* styles.css */
+
+body {
+    height: 100vh; /* Use viewport height to center vertically */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Background color for the entire page */
+}
+
+.login-button {
+    background-color: #1db954;
+    color: #fff;
+    font-size: 24px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: #16914d;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Add styles for the information container */
+#informationContainer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #4CAF50; /* Green background color */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the profile information */
+#profileInfo {
+    margin-top: 20px;
+    color: #fff; /* White text color */
+}
+
+/* Style the profile image */
+#profileImage {
+    max-width: 200px;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+/* Style the Log Out button */
+#logoutButton {
+    margin-top: 20px;
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Add hover effect for the Log Out button */
+#logoutButton:hover {
+    background-color: #333; /* Darker black on hover */
+}
+
+#playlistContainer {
+    max-height: 150px; /* Set the maximum height to control visibility */
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    margin-top: 10px;
+}
+
+/* Style the playlist list */
+#playlistList {
+    list-style: none; /* Remove default list styles */
+    padding: 0;
+}
+
+/* Style each playlist item */
+#playlistList li {
+    background-color: #ddd; /* Gray background color for playlists */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: #333;
+    text-align: left; /* Align the text to the left */
+}
+
+/* Style the tastelistPlaylistList container */
+#tastelistPlaylistContainer {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* Style each TasteList playlist item */
+#tastelistPlaylistList {
+    list-style: none;
+    padding: 0;
+}
+
+#tastelistPlaylistContainer {
+    max-height: 200px; /* Set the maximum height to control visibility */
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    margin-top: 10px;
+}
+
+/* Style the playlist list */
+#tastelistPlaylistList {
+    list-style: none; /* Remove default list styles */
+    padding: 0;
+}
+
+#tastelistPlaylistList li {
+    background-color: #ddd; /* Gray background color for playlists */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex; /* Use flexbox to align content */
+    justify-content: space-between; /* Space content evenly horizontally */
+    align-items: center; /* Center vertically */
+    color: #333;
+}
+
+/* Add these styles to your CSS file */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    z-index: 9999; /* Ensure the modal is on top of everything */
+}
+
+.modal-square {
+    background-color: #2ecc71; /* Green background color for the square modal */
+    width: 300px; /* Adjust the width as needed */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Box shadow for a raised effect */
+    color: #fff; /* White text color */
+}
+
+.modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modal-button-yes {
+    background-color: #4CAF50; /* Green color for the "Yes" button */
+    color: #fff; /* White text color */
+}
+
+.modal-button-no {
+    background-color: #e74c3c; /* Red color for the "No" button */
+    color: #fff; /* White text color */
+}
+
+.modal-button-copy {
+    background-color: #3498db; /* Blue color for the "Copy" button */
+    color: #fff; /* White text color */
+}
+
+.scrollable-list {
+    max-height: 100px; /* Adjust as needed */
+    overflow-y: auto;
+}
+
+/* Add these styles to your CSS file */
+#createPlaylistContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#createPlaylistButton {
+    background-color: #16914d; /* Darker green color */
+    color: #fff; /* White text color */
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+/* Add a hover effect to the button */
+#createPlaylistButton:hover {
+    background-color: #138041; /* Slightly darker green on hover */
+}
+
+.create-playlist-modal {
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+#createPlaylistModal input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Style the trash icon */
+.delete-icon {
+    width: 16px; /* Adjust the width as needed */
+    height: 16px; /* Adjust the height as needed */
+    cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
+    
+}
+
+.checkbox-container {
+    display: flex; /* Use flex display to arrange items horizontally */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 20px;
+    outline: 2px solid black; /* Add a black outline for better visibility */
+    padding: 10px; /* Add some padding to the container for spacing */
+}
+
+/* Style the label and checkbox */
+.checkbox-container label {
+    margin-right: 5px; /* Add some spacing between label and checkbox */
+    font-size: 12px; /* Set the font size to make the text smaller */
+}
+
+/* Style the smaller and rounder box */
+#modal-container-loading .modal-square {
+    background-color: #1e9952;
+    width: 700px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    padding: 20px;
+    border-radius: 15px; /* Increase border-radius for a rounder appearance */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Box shadow for a raised effect */
+    color: #fff; /* White text color */
+    font-size: 72px; /* Adjust the font size as needed */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center the text horizontally */
+    line-height: 1.5; /* Adjust line height for spacing */
+}
+
+#modal-container-loading .modal-square p {
+    word-wrap: break-word; /* Wrap text to fit the box size */
+}
+
+/* Style for the input container */
+.input-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container > * {
+    margin-bottom: 10px; /* Adjust the value to increase or decrease the spacing */
+}
+
+/* Style for labels */
+.label {
+    font-weight: bold;
+    margin-bottom: 20px; /* Increase the vertical space between labels and inputs */
+}
+
+/* Style for text input fields */
+.input-text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px; /* Increase the vertical space between input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for textarea */
+.textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px; /* Increase the vertical space between textarea and checkbox */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the checkbox and its label */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* Increase the vertical space between checkbox and buttons */
+}
+
+.checkbox-label {
+    margin-left: 10px;
+    font-weight: normal;
+}
